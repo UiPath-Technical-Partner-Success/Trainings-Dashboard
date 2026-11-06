@@ -1,0 +1,748 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>UiPath Trainings & Workshops</title>
+<meta name="description" content="Instructor-led courses and hands-on workshops delivered by the UiPath Technical Partner Success team for partners and customers: what each covers, who it is for, the prerequisites and how to register.">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#11181C; --surface:#182126; --surface2:#1F2A30; --ink:#F1F2EF; --muted:#A9B4BA; --line:#2C3A41;
+  --teal:#0BA2B3; --teal-ink:#5CC8D6; --orange:#FA4616; --orange-ink:#FF8A66; --on-teal:#182126; --on-orange:#182126;
+  --dark:#0B1114; --on-dark:#F1F2EF; --dark-muted:#A9B4BA; --shadow:none;
+  color-scheme:dark;
+  --head:'Poppins',Arial,sans-serif; --body:'Inter',Arial,sans-serif;
+  box-sizing:border-box; padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+  --logo:url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAwIiBoZWlnaHQ9IjExNiIgdmlld0JveD0iMCAwIDQwMCAxMTYiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxwYXRoIGQ9Ik02Mi42NDM5IDMzLjE0MjhINjAuODg1QzU2LjI5MTggMzMuMTQyOCA1My40Mzg3IDM1LjkzNzYgNTMuNDM4NyA0MC40MzU0Vjc2LjYxNzdDNTMuNDM4NyA5My43NzIyIDQ4LjEwOTggMTAwLjc2OSAzNS4wNDUxIDEwMC43NjlDMjEuOTgwNCAxMDAuNzY5IDE2LjY1MTQgOTMuNzQwNCAxNi42NTE0IDc2LjUwOTZWNDAuNDM1NEMxNi42NTE0IDM1LjkzNzcgMTMuNzk4MiAzMy4xNDI4IDkuMjA1NzUgMzMuMTQyOEg3LjQ0NTkyQzIuODUzMjYgMzMuMTQyOCAwIDM1LjkzNzcgMCA0MC40MzU0Vjc2LjYxNzdDMCAxMDIuNzUgMTEuNzkxMiAxMTYgMzUuMDQ1MSAxMTZDNTguMjk5MSAxMTYgNzAuMDg5NyAxMDIuNzUgNzAuMDg5NyA3Ni42MTc3VjQwLjQzNTRDNzAuMDg5NyAzNS45Mzc3IDY3LjIzNjQgMzMuMTQyOCA2Mi42NDM5IDMzLjE0MjhaIiBmaWxsPSJ3aGl0ZSIvPgo8cGF0aCBkPSJNOTEuMTMyNiA1NS4wOTg5SDg5LjY3NTFDODQuOTY4NSA1NS4wOTg5IDgyLjA0NTEgNTguMDAyMSA4Mi4wNDUxIDYyLjY3NDRWMTA4LjQyNUM4Mi4wNDUxIDExMy4wOTcgODQuOTY4NSAxMTYgODkuNjc1MSAxMTZIOTEuMTMyNkM5NS44Mzg2IDExNiA5OC43NjIgMTEzLjA5NyA5OC43NjIgMTA4LjQyNVY2Mi42NzQ0Qzk4Ljc2MiA1OC4wMDIxIDk1LjgzODYgNTUuMDk4OSA5MS4xMzI2IDU1LjA5ODlaIiBmaWxsPSJ3aGl0ZSIvPgo8cGF0aCBkPSJNMTExLjMyMiAyNi43Nzc4QzEwMC42ODQgMjUuMDk2NyA5Mi4yOTAyIDE2LjgzNzYgOTAuNTgxOCA2LjM3MTQzQzkwLjU0OTYgNi4xNzM4OCA5MC4yODk0IDYuMTczODggOTAuMjU3MiA2LjM3MTQzQzg4LjU0ODggMTYuODM3NiA4MC4xNTQ4IDI1LjA5NjcgNjkuNTE3NSAyNi43Nzc4QzY5LjMxNjcgMjYuODA5NCA2OS4zMTY3IDI3LjA2NTYgNjkuNTE3NSAyNy4wOTczQzgwLjE1NDggMjguNzc4MSA4OC41NDg4IDM3LjAzNzUgOTAuMjU3MiA0Ny41MDM3QzkwLjI4OTQgNDcuNzAxMiA5MC41NDk2IDQ3LjcwMTIgOTAuNTgxOCA0Ny41MDM3QzkyLjI5MDIgMzcuMDM3NSAxMDAuNjg0IDI4Ljc3ODEgMTExLjMyMiAyNy4wOTczQzExMS41MjIgMjcuMDY1NiAxMTEuNTIyIDI2LjgwOTUgMTExLjMyMiAyNi43Nzc4Wk0xMDAuODcgMjcuMDE3NEM5NS41NTE4IDI3Ljg1NzggOTEuMzU0OCAzMS45ODc1IDkwLjUwMDcgMzcuMjIwNkM5MC40ODQ1IDM3LjMxOTQgOTAuMzU0NCAzNy4zMTk0IDkwLjMzODMgMzcuMjIwNkM4OS40ODQxIDMxLjk4NzUgODUuMjg3MSAyNy44NTc4IDc5Ljk2ODUgMjcuMDE3NEM3OS44NjggMjcuMDAxNiA3OS44NjggMjYuODczNSA3OS45Njg1IDI2Ljg1NzdDODUuMjg3MSAyNi4wMTcxIDg5LjQ4NDEgMjEuODg3NiA5MC4zMzgzIDE2LjY1NDVDOTAuMzU0NCAxNi41NTU3IDkwLjQ4NDUgMTYuNTU1NyA5MC41MDA3IDE2LjY1NDVDOTEuMzU0OCAyMS44ODc2IDk1LjU1MTggMjYuMDE3MSAxMDAuODcgMjYuODU3N0MxMDAuOTcxIDI2Ljg3MzUgMTAwLjk3MSAyNy4wMDE2IDEwMC44NyAyNy4wMTc0WiIgZmlsbD0id2hpdGUiLz4KPHBhdGggZD0iTTExNy42OTQgMTAuNDM3MUMxMTIuMzc2IDExLjI3NzQgMTA4LjE3OSAxNS40MDcxIDEwNy4zMjUgMjAuNjQwMkMxMDcuMzA4IDIwLjczOSAxMDcuMTc4IDIwLjczOSAxMDcuMTYyIDIwLjY0MDJDMTA2LjMwOCAxNS40MDcxIDEwMi4xMTEgMTEuMjc3NCA5Ni43OTIzIDEwLjQzNzFDOTYuNjkxOSAxMC40MjEyIDk2LjY5MTkgMTAuMjkzMSA5Ni43OTIzIDEwLjI3NzNDMTAyLjExMSA5LjQzNjc0IDEwNi4zMDggNS4zMDcyIDEwNy4xNjIgMC4wNzQwODk4QzEwNy4xNzggLTAuMDI0Njk2NiAxMDcuMzA4IC0wLjAyNDY5NjYgMTA3LjMyNSAwLjA3NDA4OThDMTA4LjE3OSA1LjMwNzIgMTEyLjM3NiA5LjQzNjcyIDExNy42OTQgMTAuMjc3M0MxMTcuNzk1IDEwLjI5MzEgMTE3Ljc5NSAxMC40MjEyIDExNy42OTQgMTAuNDM3MVoiIGZpbGw9IndoaXRlIi8+CjxwYXRoIGQ9Ik0xMzUuMzEyIDMzLjE0MjhIMTE5LjA4N0MxMTQuNDQ1IDMzLjE0MjggMTExLjU2MSAzNS45Njc0IDExMS41NjEgNDAuNTEzM1YxMDguNjNDMTExLjU2MSAxMTMuMTc1IDExNC40NDUgMTE2IDExOS4wODcgMTE2SDEyMC44NjVDMTI1LjUwNyAxMTYgMTI4LjM5MSAxMTMuMTc1IDEyOC4zOTEgMTA4LjYzVjkyLjUwNTdIMTM1LjQyM0MxNjMuNTggOTIuNTA1NyAxNzUuMDY2IDgzLjkwNjYgMTc1LjA2NiA2Mi44MjQzQzE3NS4wNjYgNDEuNzQxOSAxNjMuNTQ4IDMzLjE0MjggMTM1LjMxMiAzMy4xNDI4Wk0xNTguMDE0IDYyLjYwNjdDMTU4LjAxNCA3My40NTI1IDE1Mi43NjIgNzcuMTEyMyAxMzcuMjAxIDc3LjExMjNIMTI4LjM5MVY0OC4yMDk1SDEzNy4yMDFDMTUyLjc2MiA0OC4yMDk1IDE1OC4wMTQgNTEuODQyIDE1OC4wMTQgNjIuNjA2N1oiIGZpbGw9IndoaXRlIi8+CjxwYXRoIGQ9Ik0yMzcuNTY0IDQ4LjQ3MzlIMjM2LjIzQzIzMS41ODkgNDguNDczOSAyMjguNzA1IDUxLjI5ODYgMjI4LjcwNSA1NS44NDQ0VjU1Ljg1MzhDMjIzLjkzOCA1MC40NDc0IDIxNi41NTQgNDcuMjc3MiAyMDguMTE0IDQ3LjI3NzJDMTk5LjUxNiA0Ny4yNzcyIDE5MS43NCA1MC4zNzExIDE4Ni4yMiA1NS45OTAzQzE4MC4yMDcgNjIuMTA5NCAxNzcuMDI5IDcwLjk0MTIgMTc3LjAyOSA4MS41Mjk5QzE3Ny4wMjkgOTIuMTY0NyAxODAuMjI2IDEwMS4wNDcgMTg2LjI3NCAxMDcuMjE3QzE5MS44MjUgMTEyLjg4MSAxOTkuNjIxIDExNiAyMDguMjI1IDExNkMyMTYuNTA1IDExNiAyMjMuOTQ0IDExMi43OSAyMjguNzExIDEwNy40NjJDMjI4LjcxMSAxMDcuNDY4IDIyOC43MTEgMTA4Ljk5OCAyMjguNzEyIDEwOS4wMDRDMjI4Ljg2NiAxMTMuMzMgMjMxLjcxNyAxMTYgMjM2LjIzIDExNkgyMzcuNTY0QzI0Mi4yMDYgMTE2IDI0NS4wODkgMTEzLjE3NiAyNDUuMDg5IDEwOC42MzFWNTUuODQ0NEMyNDUuMDg5IDUxLjI5ODYgMjQyLjIwNiA0OC40NzM5IDIzNy41NjQgNDguNDczOVpNMjI5LjAzOCA4MS41Mjk5QzIyOS4wMzggOTMuOTY3OCAyMjIuMjU2IDEwMS42OTUgMjExLjMzNyAxMDEuNjk1QzIwMC4yODEgMTAxLjY5NSAxOTMuNDE0IDkzLjk2NzggMTkzLjQxNCA4MS41Mjk5QzE5My40MTQgNjkuMTU3OSAyMDAuMTk2IDYxLjQ3MyAyMTEuMTE1IDYxLjQ3M0MyMjIuMDAzIDYxLjQ3MyAyMjkuMDM4IDY5LjM0NjIgMjI5LjAzOCA4MS41Mjk5WiIgZmlsbD0id2hpdGUiLz4KPHBhdGggZD0iTTMzNC40NDggNDcuMzQyNUMzMjUuNzMzIDQ3LjM0MjUgMzE5LjUxNiA1MC43NDE3IDMxNS42MjQgNTUuMDI1NlY0MC41MTc5QzMxNS42MjQgMzUuOTY5MyAzMTIuNzM4IDMzLjE0MjggMzA4LjA5NCAzMy4xNDI4SDMwNi43NTlDMzAyLjExNSAzMy4xNDI4IDI5OS4yMjkgMzUuOTY5MyAyOTkuMjI5IDQwLjUxNzlWMTA4LjYyNUMyOTkuMjI5IDExMy4xNzQgMzAyLjExNSAxMTYgMzA2Ljc1OSAxMTZIMzA4LjA5NEMzMTIuNzM4IDExNiAzMTUuNjI0IDExMy4xNzQgMzE1LjYyNCAxMDguNjI1VjgxLjI4OTdDMzE1LjYyNCA2My43ODk0IDMyNC4xNDYgNjEuNzY1NyAzMzAuNTU2IDYxLjc2NTdDMzQxLjMyIDYxLjc2NTcgMzQ1LjcxMSA2Ny4wMTI1IDM0NS43MTEgNzkuODc0NlYxMDguNjI1QzM0NS43MTEgMTEzLjE3NCAzNDguNTk2IDExNiAzNTMuMjQxIDExNkgzNTQuNTc2QzM1OS4yMiAxMTYgMzYyLjEwNSAxMTMuMTc0IDM2Mi4xMDUgMTA4LjYyNVY3OC44OTM4QzM2Mi4xMDUgNTcuNjYyNyAzNTMuMDU5IDQ3LjM0MjUgMzM0LjQ0OCA0Ny4zNDI1WiIgZmlsbD0id2hpdGUiLz4KPHBhdGggZD0iTTI5NC41MTUgMTA3LjY2NEMyOTQuMjg0IDEwNS40NzIgMjkyLjk0NSAxMDIuMzQgMjg2LjU2NSAxMDIuMzRDMjc5LjAyMSAxMDIuMzQgMjc1LjQzMSAxMDAuMDM3IDI3NS40MzEgODYuOTUyOVY2MS43NjU4SDI4Ni42NzVDMjkxLjMxMyA2MS43NjU4IDI5NC4xOTQgNTkuMTkgMjk0LjE5NCA1NS4wNDQ2QzI5NC4xOTQgNTAuOTY2IDI5MS4zMTMgNDguNDMxNyAyODYuNjc1IDQ4LjQzMTdIMjc1LjQ0NFY0MC41MTc5QzI3NS40NDQgMzUuOTY5MyAyNzIuNTQxIDMzLjE0MjggMjY3Ljg2OSAzMy4xNDI4SDI2Ni41MjZDMjYxLjg1NCAzMy4xNDI4IDI1OC45NTEgMzUuOTY5MyAyNTguOTUxIDQwLjUxNzlWNDguNDMxN0gyNTYuMzY2QzI1Mi4yNzYgNDguNDMxNyAyNDkuNzM2IDUwLjk2NiAyNDkuNzM2IDU1LjA0NDZDMjQ5LjczNiA1OS4xOSAyNTIuNjE3IDYxLjc2NTggMjU3LjI1NCA2MS43NjU4SDI1OC45NTFWODguMzY4OUMyNTguOTUxIDEwNy43MzcgMjY2LjY0NSAxMTYgMjg0LjY3NyAxMTZDMjg0LjcwNyAxMTYgMjg0LjczNiAxMTUuOTk5IDI4NC43NjUgMTE1Ljk5OEMyODUuODEzIDExNS45OTcgMjg2LjkzNyAxMTUuOTgxIDI4OC4wODEgMTE1Ljg4MUMyOTAuMzU0IDExNS42NyAyOTIuMDczIDExNC44ODUgMjkzLjE5MSAxMTMuNTQ2QzI5NC4zMDUgMTEyLjIxMyAyOTQuNzUgMTA5Ljg3IDI5NC41MTUgMTA3LjY2NFoiIGZpbGw9IndoaXRlIi8+CjxwYXRoIGQ9Ik0zNjcuMzMxIDQ3LjYzMjhWMzYuNDA4MkgzNjQuMUMzNjIuODIzIDM2LjQwODIgMzYyLjEwNSAzNS44MzY3IDM2Mi4xMDUgMzQuNzc1NUMzNjIuMTA1IDMzLjcxNDMgMzYyLjgyMyAzMy4xNDI4IDM2NC4xIDMzLjE0MjhIMzczLjk1MkMzNzUuMjI4IDMzLjE0MjggMzc1Ljk0NiAzMy43MTQzIDM3NS45NDYgMzQuNzc1NUMzNzUuOTQ2IDM1LjgzNjcgMzc1LjIyOCAzNi40MDgyIDM3My45NTIgMzYuNDA4MkgzNzAuODAxVjQ3LjYzMjhDMzcwLjgwMSA0OC45MzkgMzcwLjIwMyA0OS42NzMzIDM2OS4wODYgNDkuNjczM0MzNjcuOTY5IDQ5LjY3MzMgMzY3LjMzMSA0OC45MzkgMzY3LjMzMSA0Ny42MzI4Wk0zNzcuODIyIDQ5LjcxMzlDMzc2Ljc0NSA0OS43MTM5IDM3Ni4xNzQgNDguODkzNyAzNzYuNDY1IDQ3LjQ2OTVMMzc5LjAxOCAzNC45Mzg4QzM3OS4yNTggMzMuNzU1MyAzNzkuOTc2IDMzLjE0MjggMzgxLjE3MiAzMy4xNDI4SDM4MS43NzFDMzgyLjg4NyAzMy4xNDI4IDM4My42MzcgMzMuNjc3NSAzODQuMDQ0IDM0LjczNDFMMzg4LjE5MiA0NS41MDk2TDM5Mi4zOCAzNC43MzQxQzM5Mi43OTUgMzMuNjY1MiAzOTMuNTc3IDMzLjE0MjggMzk0LjY5NCAzMy4xNDI4SDM5NS4yNTJDMzk2LjQ0OSAzMy4xNDI4IDM5Ny4xNjcgMzMuNzU1MyAzOTcuNDA2IDM0LjkzODhMMzk5LjkxOSA0Ny40Njk1QzQwMC4yMDYgNDguODk3OSAzOTkuNzIgNDkuNzE0MyAzOTguNjQzIDQ5LjcxNDNDMzk3LjQ4NiA0OS43MTQzIDM5Ni43NzIgNDkuMTAyMiAzOTYuNTI5IDQ3LjkxODNMMzk0LjQxNSAzNy42NzM2TDM5MC40MjYgNDguMTIyNkMzOTAuMDA3IDQ5LjIxNjQgMzg5LjMwOSA0OS43MTM5IDM4OC4yMzIgNDkuNzEzOUMzODcuMTE1IDQ5LjcxMzkgMzg2LjQxNyA0OS4yMTY0IDM4NS45OTggNDguMTIyNkwzODIuMDEgMzcuNjczNkwzNzkuOTM1IDQ3LjkxODNDMzc5LjY5NiA0OS4xMDIyIDM3OC45NzggNDkuNzEzOSAzNzcuODIyIDQ5LjcxMzlaIiBmaWxsPSJ3aGl0ZSIvPgo8L3N2Zz4K");
+}
+html{scroll-padding-top:calc(env(safe-area-inset-top,0px) + 24px);height:100%}
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--body);font-size:17px;line-height:1.55;-webkit-text-size-adjust:100%}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:30;background:var(--bg)}
+h1,h2,h3,h4{font-family:var(--head);font-weight:600;line-height:1.2;margin:0;color:var(--ink)}
+p{margin:0}
+a{color:var(--teal-ink)}
+button{font:inherit;color:inherit;cursor:pointer}
+:focus-visible{outline:3px solid var(--teal);outline-offset:2px;border-radius:6px}
+.wrap{max-width:1120px;margin:0 auto;padding:0 20px}
+.spacer{flex:1}
+
+/* logo top-right of each view (from reference) */
+.view>.wrap::before{content:"";display:block;width:118px;height:34px;margin:0 0 14px auto;background:var(--logo) no-repeat right center/contain}
+.view.nologo>.wrap::before{display:none}
+
+/* hero (from reference) */
+.hero{position:relative;overflow:hidden;background:#182126;color:#E7ECF3;border:1px solid var(--line);border-radius:28px;padding:40px 48px 44px;min-height:460px;display:flex;flex-direction:column;justify-content:space-between;gap:36px}
+.hero-top{display:flex;justify-content:space-between;align-items:center;gap:20px;position:relative;z-index:1;padding-left:96px}
+.hero-top img.ul{width:160px;height:46px}
+.hero-top .team{font-size:13px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#A9B4BA;border:1px solid var(--line);border-radius:999px;padding:6px 14px}
+.hero-main{position:relative;z-index:1}
+.hero-main .k{font-size:14px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:#0BA2B3}
+.hero h1{font-size:clamp(34px,5.4vw,64px);line-height:1.05;color:#fff;margin:12px 0 14px;max-width:780px}
+.hero h1 em{font-style:normal;color:var(--orange)}
+.hero .sub{font-size:20px;font-weight:500;max-width:640px;color:#A9B4BA}
+.hero-meta{display:flex;gap:44px;flex-wrap:wrap;position:relative;z-index:1}
+.hero-meta .n{font-family:var(--head);font-weight:600;font-size:30px;color:#fff;line-height:1.1}
+.hero-meta .r{font-size:15px;color:#A9B4BA}
+.pix{position:absolute;pointer-events:none}
+.pix.tl{left:0;top:0}.pix.br{right:0;bottom:0}
+@media (max-width:900px){.hero{padding:28px 24px 32px}.hero-meta{gap:24px}}
+@media (max-width:640px){.hero-top{padding-left:0;flex-wrap:wrap}.hero-top img.ul{width:120px;height:35px}.pix.tl{display:none}.hero h1{font-size:34px}.hero .sub{font-size:17px}}
+
+/* shell + sidebar (from reference) */
+.shell{display:grid;grid-template-columns:272px minmax(0,1fr);min-height:100vh}
+.side{position:sticky;top:env(safe-area-inset-top,0px);align-self:start;height:calc(100vh - env(safe-area-inset-top,0px));overflow-y:auto;border-right:1px solid var(--line);padding:20px 14px 20px 18px;background:var(--bg);display:flex;flex-direction:column;gap:6px}
+.side-top{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:10px}
+.brand{font-family:var(--head);font-weight:600;font-size:16px;line-height:1.25}
+.brand span{display:block;color:var(--muted);font-weight:500;font-size:13px}
+.menu-btn{display:none;border:1px solid var(--line);background:var(--surface);border-radius:12px;padding:10px 14px;font-weight:600;font-size:15px;width:100%;text-align:left}
+.nav{display:flex;flex-direction:column;gap:2px}
+.grp{font-family:var(--head);font-size:13.5px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--ink);padding:16px 12px 5px;margin:0}
+.nav a{display:flex;gap:10px;align-items:baseline;text-decoration:none;color:var(--muted);font-size:15px;font-weight:500;padding:6px 12px;border-radius:10px;line-height:1.3}
+.nav a:hover{color:var(--ink);background:var(--surface2)}
+.nav a[aria-current="page"]{background:var(--dark);color:var(--on-dark)}
+.subnav{display:flex;flex-direction:column;gap:2px;margin:2px 0 6px 20px;padding-left:6px;border-left:2px solid var(--line)}
+.subnav a{font-size:14.5px;padding:5px 10px}
+.side-cta{margin-top:auto;padding:16px 12px 4px;font-size:13.5px;color:var(--muted)}
+.side-cta a{font-weight:600}
+.content{min-width:0}
+@media (max-width:860px){.shell{display:block}.side{position:static;height:auto;overflow:visible;border-right:0;border-bottom:1px solid var(--line);padding:14px 16px}.menu-btn{display:block}.nav{display:none}.nav.open{display:flex}.side-cta{display:none}}
+
+main{padding:28px 0 56px;min-height:70vh}
+.view{display:none}
+.view.on{display:block}
+.eyebrow{font-size:13px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--teal-ink)}
+.view>.wrap>h1,.view>.wrap>.head h1{font-size:clamp(28px,4.5vw,42px);margin:6px 0 10px}
+.head{gap:12px;margin-bottom:10px}
+.lead{font-size:19px;color:var(--muted);max-width:780px}
+.section{margin-top:44px}
+.section>h2{font-size:25px;margin-bottom:6px}
+.section>.sub{color:var(--muted);margin-bottom:16px;max-width:780px}
+.prose{max-width:780px}
+.prose p+p{margin-top:12px}
+.prose ul,.prose ol{margin:8px 0 0;padding-left:22px}
+.prose li{margin:6px 0}
+
+.grid{display:grid;gap:16px}
+.g2{grid-template-columns:repeat(2,1fr)} .g3{grid-template-columns:repeat(3,1fr)} .g4{grid-template-columns:repeat(4,1fr)}
+@media (max-width:900px){.g3,.g4{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:620px){.g2,.g3,.g4{grid-template-columns:1fr}}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:20px;box-shadow:var(--shadow)}
+.card.dark{background:var(--dark);color:var(--on-dark);border-color:transparent}
+.card.dark .muted{color:var(--dark-muted)}
+.card h3{font-size:18px;margin-bottom:6px}
+.muted{color:var(--muted)}
+.stat{display:flex;flex-direction:column;gap:6px}
+.stat .num{font-family:var(--head);font-weight:600;font-size:40px;line-height:1;color:var(--teal)}
+.stat .num em{font-style:normal;color:var(--orange)}
+.stat .lab{font-weight:600}
+
+/* catalog cards (from reference .pcard) */
+.pcard{display:flex;flex-direction:column;gap:12px;text-decoration:none;color:inherit;transition:transform .15s,border-color .15s}
+.pcard:hover{transform:translateY(-2px);border-color:var(--teal)}
+.pcard .pn{font-size:13px;font-weight:600;letter-spacing:.1em;color:var(--teal-ink);text-transform:uppercase}
+.pcard h3{font-size:20px;margin:0}
+.pcard p{color:var(--muted);font-size:15px}
+.pcard .facts{display:flex;flex-wrap:wrap;gap:6px 16px;font-size:14px;color:var(--ink)}
+.pcard .facts span::before{content:"";display:inline-block;width:6px;height:6px;border-radius:2px;background:var(--teal);margin-right:7px;vertical-align:2px}
+.pcard .gol{margin-top:auto;font-size:14px;font-weight:600;color:var(--teal-ink)}
+.pcard.t-workshop:hover{border-color:var(--orange)}
+.pcard.t-workshop .pn{color:var(--orange-ink)}
+.pcard.t-workshop .facts span::before{background:var(--orange)}
+.empty{display:none}
+.empty.on{display:block}
+
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0 16px;align-items:center}
+.chip{border:1px solid var(--line);background:var(--surface);color:var(--ink);border-radius:999px;padding:7px 14px;font-size:15px;font-weight:500}
+.chip[aria-pressed="true"]{background:var(--dark);color:var(--on-dark);border-color:var(--teal)}
+.chip .c{opacity:.65;margin-left:6px}
+.search{width:100%;max-width:340px;border:1px solid var(--line);border-radius:999px;background:var(--surface);color:var(--ink);padding:9px 16px;font:inherit;font-size:15px;margin-left:auto}
+@media (max-width:760px){.search{margin-left:0;max-width:none}}
+
+.tags{display:flex;flex-wrap:wrap;gap:6px}
+.tag{font-size:13px;font-weight:600;padding:2px 10px;border-radius:999px;border:1px solid var(--line);color:var(--muted)}
+.tag.ilt{background:var(--teal);border-color:var(--teal);color:var(--on-teal)}
+.tag.workshop{background:var(--orange);border-color:var(--orange);color:var(--on-orange)}
+.tag.selfpaced{border-color:var(--teal);color:var(--teal-ink)}
+.tag.lvl{border-color:var(--orange);color:var(--orange-ink)}
+
+.marks{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}
+.mk{border:1px solid var(--line);background:var(--surface);border-radius:12px;padding:10px 16px;min-width:150px;flex:1 1 150px}
+.mk .k{font-size:12px;color:var(--muted);font-weight:600;letter-spacing:.06em;text-transform:uppercase}
+.mk .v{font-family:var(--head);font-weight:600;font-size:18px;line-height:1.3;margin-top:2px}
+
+/* agenda + lists */
+.agenda{display:grid;gap:16px}
+.agenda.two{grid-template-columns:repeat(2,1fr)}
+@media (max-width:760px){.agenda.two{grid-template-columns:1fr}}
+.agenda h3{font-size:17px;color:var(--teal-ink);margin-bottom:10px}
+.agenda ol{margin:0;padding:0;list-style:none;counter-reset:a;display:grid;gap:8px}
+.agenda ol li{counter-increment:a;display:grid;grid-template-columns:30px 1fr;gap:10px;align-items:start}
+.agenda ol li::before{content:counter(a);font-family:var(--head);font-weight:600;font-size:13px;width:26px;height:26px;border-radius:8px;background:var(--surface2);color:var(--teal-ink);display:grid;place-items:center}
+.agenda li.hands::before{background:var(--orange);color:var(--on-orange)}
+.agenda li .hl{font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--orange-ink);margin-left:6px}
+.out{display:grid;gap:10px}
+.out li{list-style:none;padding:12px 16px;border:1px solid var(--line);border-radius:12px;background:var(--surface)}
+.out li b{color:var(--ink)}
+.out li span{color:var(--muted)}
+ul.out{margin:0;padding:0}
+
+/* flow (Input > Agent > Output) */
+.flow{display:grid;grid-template-columns:1fr auto 1fr auto 1fr;gap:10px;align-items:stretch}
+.flow .st{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:14px 16px}
+.flow .st.mid{background:var(--dark);border-color:var(--teal)}
+.flow .st .k{font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--teal-ink)}
+.flow .st .v{font-family:var(--head);font-weight:600;font-size:17px;margin-top:4px}
+.flow .ar{display:grid;place-items:center;color:var(--orange);font-size:24px;font-weight:700}
+@media (max-width:700px){.flow{grid-template-columns:1fr}.flow .ar{transform:rotate(90deg);height:20px}}
+
+/* path to production */
+.path{display:grid;grid-template-columns:repeat(6,1fr);gap:10px}
+@media (max-width:900px){.path{grid-template-columns:repeat(3,1fr)}}
+@media (max-width:520px){.path{grid-template-columns:repeat(2,1fr)}}
+.path .p{border:1px solid var(--line);border-radius:14px;padding:14px;background:var(--surface)}
+.path .p i{display:block;width:14px;height:14px;border-radius:50%;border:2px solid var(--orange);margin-bottom:10px}
+.path .p.on i{background:var(--orange)}
+.path .p.on{border-color:var(--orange)}
+.path .p .k{font-size:12.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase}
+.path .p .v{font-size:14px;color:var(--muted);margin-top:2px}
+.legend{display:flex;flex-wrap:wrap;gap:16px;font-size:14px;color:var(--muted);margin-top:12px}
+.legend b{display:inline-block;width:12px;height:12px;border-radius:50%;vertical-align:-1px;margin-right:6px;border:2px solid var(--orange)}
+.legend b.f{background:var(--orange)}
+
+/* prerequisites */
+.req{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:18px 20px;box-shadow:inset 4px 0 0 var(--orange)}
+.req h3{font-size:17px;margin-bottom:4px}
+.req .when{font-size:14px;color:var(--orange-ink);font-weight:600;margin-bottom:10px}
+.req ul{margin:0;padding:0;list-style:none;display:grid;gap:8px}
+.req li a,.req li .nolink{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:10px 14px;border-radius:12px;background:var(--surface2);text-decoration:none;color:var(--ink);font-weight:600}
+.req li a:hover{outline:1px solid var(--teal)}
+.req li a::after{content:"↗";color:var(--teal-ink);font-weight:700}
+.req .or{font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);text-align:center}
+.chk{margin:0;padding:0;list-style:none;display:grid;gap:8px}
+.chk li{display:grid;grid-template-columns:22px 1fr;gap:8px;align-items:start}
+.chk li::before{content:"✓";color:var(--teal-ink);font-weight:700}
+.chk.warn li::before{content:"!";color:var(--orange-ink)}
+.chk a{word-break:break-word}
+
+/* register */
+.regbox{display:flex;justify-content:space-between;align-items:center;gap:18px;flex-wrap:wrap;background:var(--dark);border:1px solid var(--teal);border-radius:20px;padding:22px 24px}
+.regbox h3{font-size:20px}
+.regbox p{color:var(--dark-muted);font-size:15px;margin-top:4px;max-width:560px}
+.regcol{background:var(--dark);border:1px solid var(--teal);border-radius:20px;padding:22px 24px;display:flex;flex-direction:column;gap:8px;align-items:flex-start}
+.regcol.cust{border-color:var(--orange)}
+.regcol .who{font-size:12.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--teal-ink)}
+.regcol.cust .who{color:var(--orange-ink)}
+.regcol h3{font-size:20px}
+.regcol .t{color:var(--dark-muted);font-size:15px}
+.regcol .btn{margin-top:auto}
+.steps-h{font-size:17px;margin:22px 0 12px}
+.btn{display:inline-flex;align-items:center;gap:8px;border:1px solid var(--dark);background:var(--dark);color:var(--on-dark);border-radius:999px;padding:10px 20px;font-weight:600;font-size:15px;text-decoration:none;white-space:nowrap}
+.btn.cta{background:var(--teal);border-color:var(--teal);color:var(--on-teal)}
+.btn.cta:hover{filter:brightness(1.1)}
+.btn.ghost{background:transparent;color:var(--ink);border-color:var(--line)}
+.btn.ghost:hover{border-color:var(--teal)}
+.row{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+.steps{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;counter-reset:s;margin:0;padding:0;list-style:none}
+@media (max-width:760px){.steps{grid-template-columns:1fr}}
+.steps li{counter-increment:s;background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:16px 18px 16px 62px;position:relative}
+.steps li::before{content:counter(s);position:absolute;left:16px;top:16px;width:32px;height:32px;border-radius:10px;background:var(--teal);color:var(--on-teal);font-family:var(--head);font-weight:600;display:grid;place-items:center}
+.steps li.key{border-color:var(--orange)}
+.steps li.key::before{background:var(--orange);color:var(--on-orange)}
+.steps li b{display:block;font-family:var(--head);font-weight:600;font-size:16px;margin-bottom:2px}
+.steps li span{color:var(--muted);font-size:15px}
+
+.path-mini{display:flex;flex-wrap:wrap;align-items:center;gap:8px}
+.path-mini a,.path-mini span.s{border:1px solid var(--line);background:var(--surface2);border-radius:999px;padding:6px 14px;font-size:14px;font-weight:600;text-decoration:none;color:var(--ink)}
+.path-mini a:hover{border-color:var(--teal)}
+.path-mini .ar{color:var(--orange);font-weight:700}
+
+.table-wrap{overflow-x:auto;border:1px solid var(--line);border-radius:16px;background:var(--surface)}
+table{border-collapse:collapse;width:100%;min-width:760px}
+th,td{text-align:left;vertical-align:top;padding:12px 16px;border-bottom:1px solid var(--line);font-size:15px}
+th{background:var(--dark);color:var(--on-dark);font-size:13.5px;letter-spacing:.04em}
+tr:last-child td{border-bottom:0}
+td.layer{font-weight:600;white-space:nowrap}
+td.layer a{color:var(--ink);text-decoration:none}
+td.layer a:hover{color:var(--teal-ink)}
+td.layer small{display:block;font-weight:500;color:var(--muted);font-size:13px}
+td ul{margin:0;padding-left:16px}
+td li{margin:2px 0}
+.decq{border-left:5px solid var(--orange);padding:4px 0 4px 14px;font-size:17px;font-weight:500}
+.note{background:var(--surface2);border-radius:12px;padding:12px 16px;color:var(--muted);font-size:15px}
+.note b{color:var(--ink)}
+.pager{display:flex;justify-content:space-between;gap:12px;margin-top:44px;flex-wrap:wrap}
+.pager a{text-decoration:none;border:1px solid var(--line);background:var(--surface);color:var(--ink);padding:10px 18px;border-radius:999px;font-weight:600;font-size:15px}
+.pager a:hover{border-color:var(--teal)}
+footer{border-top:1px solid var(--line);padding:22px 0 30px;color:var(--muted);font-size:14px}
+footer p+p{margin-top:8px;font-size:12.5px;opacity:.8}
+@media (max-width:620px){body{font-size:16px}.lead{font-size:17px}.brand span{display:none}}
+@media print{.side,.pager,.chips{display:none}.shell{display:block}.view{display:block!important;page-break-after:always}}
+</style>
+</head>
+<body>
+<div class="shell">
+  <aside class="side" id="side">
+    <div class="side-top"><div class="brand">UiPath Partner Success<span>Trainings &amp; workshops</span></div></div>
+    <button class="menu-btn" id="menuBtn" type="button" aria-expanded="false" aria-controls="nav">Menu</button>
+    <nav class="nav" id="nav" aria-label="Sections"></nav>
+    <div class="side-cta">Questions? <a href="mailto:partner_enablement@uipath.com">partner_enablement@uipath.com</a></div>
+  </aside>
+  <div class="content">
+    <main id="main"></main>
+    <footer><div class="wrap">
+      <p>UiPath Technical Partner Success · Trainings and workshops for UiPath partners and customers · Questions: <a href="mailto:partner_enablement@uipath.com">partner_enablement@uipath.com</a></p>
+    </div></footer>
+  </div>
+</div>
+
+<script>
+/* =====================================================================
+   CONTENT: edit this block to update the dashboard.
+   Each offering has its own `register` entry: change `url` to swap in a
+   dedicated registration link.
+   ===================================================================== */
+const LINKS = {
+  portal: 'https://partnerportal.uipath.com/',
+  email: 'partner_enablement@uipath.com',
+  aaIntro: 'https://academy.uipath.com/courses/uipath-agentic-automation-ilt-introduction',
+  ixp: 'https://uipath-practice.github.io/IXP-TrainingCourse/',
+  tmOverview: 'https://academy.uipath.com/courses/uipath-test-manager-overview',
+  desktopTest: 'https://academy.uipath.com/courses/desktop-test-automation-using-uipath-studio',
+  pySdk: 'https://uipath.github.io/uipath-python/core/getting_started/'
+};
+
+const TYPES = {
+  ilt:       {label:'Instructor-led course', short:'Instructor-led'},
+  workshop:  {label:'Hands-on workshop',     short:'Workshop'},
+  selfpaced: {label:'Self-paced build',      short:'Self-paced'}
+};
+
+const ILT_REG = {
+  url: LINKS.portal, title: 'Register through the Partner Portal', label: 'Go to the Partner Portal',
+  text: 'Find the current ILT enrollment on the UiPath Partner Portal and register with your company email. Pick this course and the session that fits you. A registration is a request for a seat, not a confirmation.',
+  steps: [
+    'Create or sign in to your UiPath Partner Portal account with your company email (not a personal one).',
+    'Open the ILT enrollment from the Partner Portal, select this course and choose a session.',
+    'Complete the mandatory prerequisites at least 2 weeks before the class.',
+    'Accept the meeting invitation you receive 1–2 weeks before the session.'
+  ]
+};
+const WS_REG = {
+  url: LINKS.portal, title: 'Register your interest', label: 'Go to the Partner Portal',
+  text: 'Register your interest through the UiPath Partner Portal with your company email. The Technical Partner Success team will come back to you with the next available session.',
+  steps: [
+    'Sign in to the UiPath Partner Portal with your company email.',
+    'Register your interest in this workshop from the Partner Portal.',
+    'Check the prerequisites and set up what you need before the day.'
+  ]
+};
+
+const D = {
+  offerings: [
+    {
+      id:'aa-associate', type:'ilt', title:'Agentic Automation Associate',
+      tagline:'A deep dive into UiPath’s AI-powered automation: agents, orchestration with Maestro and the platform around them.',
+      facts:{Duration:'4 h self-learning + 1-day workshop', Delivery:'Remote, instructor-led', Completion:'Certificate of completion'},
+      card:['1 day + 4 h self-learning','Remote · live','Developers'],
+      overview:[
+        'This 4-hour self-learning module, together with a one-day hands-on workshop, gives a deep dive into UiPath’s AI-powered automation capabilities.',
+        'The program covers practical exercises with Agentic Automation and Agentic Orchestration as they apply to UiPath enterprise automations. Attendees leave equipped to design, deploy and optimize intelligent automation solutions.'
+      ],
+      agenda:[
+        {h:'Self-learning module (4 hrs)', items:['UiPath Platform in the agentic era','AI Agents and their tools','Integration Service','Data Fabric','Apps and Action Center','Other GenAI Activities','AI Trust Layer and AI governance','Autopilot for Everyone','Agentic Automation with Agent Builder','BPMN and DMN introduction','Agentic Orchestration with Maestro']},
+        {h:'Workshop (1 day)', items:['Review and Q&A with the instructor',{t:'ServiceNow Incident Triage Automation Agent', hands:'2.5 hrs'},{t:'2-way Invoice–PO matching automation', hands:'3.5 hrs'},'Continue your learning journey','Wrap-up and next steps']}
+      ],
+      outcomes:[
+        ['Understand UiPath platform’s AI capabilities','Get an overview of UiPath’s AI offerings, including GenAI, Specialized AI and the AI Trust Layer, and how AI enhances enterprise automation.'],
+        ['Use UiPath Integration Service','Connect and configure integrations with third-party services.'],
+        ['Implement GenAI Activities in automation','Explore GenAI activities such as categorizing emails and performing web search.'],
+        ['Configure and use Autopilot for Everyone','Configure UiPath Autopilot at tenant level, then connect and use UiPath Assistant.'],
+        ['Build and deploy AI Agents with Agent Builder','Hands-on experience creating AI agents, using escalation apps, agent memory, APIs, prompt engineering and performance evaluations.'],
+        ['Orchestrate robots, agents and humans with Maestro','The fundamentals of Agentic Orchestration, including BPMN concepts and how to build process diagrams for automation.'],
+        ['Monitor and optimize UiPath Maestro','Operate, monitor and optimize AI-driven automation solutions.']
+      ],
+      audience:[['Developers','RPA developer skills are recommended, with 1–3 years of software development and/or RPA experience.'],['UiPath practitioners','Experience with RPA tools and broad knowledge of UiPath Platform capabilities is strongly recommended.']],
+      prereq:{
+        mandatory:[{t:'UiPath Agentic Automation ILT – Introduction (~4 hrs)', url:LINKS.aaIntro}],
+        skills:['RPA developer skills recommended','Software development and/or RPA technologies experience (1–3 years)','Experience with RPA tools and broad knowledge of UiPath Platform capabilities strongly recommended'],
+        setup:['Access to UiPath Studio and Robot throughout the training','Fully available for 8 hours on the day, with active participation'],
+        note:'Certificates of completion are granted only to participants who complete the workshop assignments in full.'
+      },
+      register:ILT_REG
+    },
+    {
+      id:'aa-professional', type:'ilt', title:'Agentic Automation Professional',
+      tagline:'Go further with conversational and coded agents, then put them to work in a hands-on claims intake process.',
+      facts:{Duration:'1-day workshop', Delivery:'Remote, instructor-led', Completion:'Certificate of completion'},
+      card:['1 day','Remote · live','Developers'],
+      overview:[
+        'A one-day hands-on workshop that builds on the Associate level and gives a deep dive into UiPath’s AI-powered automation capabilities.',
+        'The program covers practical exercises with Agentic Automation and Agentic Orchestration as they apply to UiPath enterprise automations, including conversational and coded agents. Attendees leave equipped to design, deploy and optimize intelligent automation solutions.'
+      ],
+      agenda:[
+        {h:'Workshop (1 day)', items:['Briefing of the Agentic Automation Platform','Conversational Agents','Coded Agents',{t:'Claims Intake Process', hands:'Hands-on'}]}
+      ],
+      outcomes:[
+        ['Understand UiPath platform’s AI capabilities','GenAI, Specialized AI and the AI Trust Layer, and how AI enhances enterprise automation.'],
+        ['Use UiPath Integration Service','Connect and configure integrations with third-party services.'],
+        ['Implement GenAI Activities in automation','Such as categorizing emails and performing web search.'],
+        ['Configure and use Autopilot for Everyone','Tenant-level configuration and UiPath Assistant.'],
+        ['Build and deploy AI Agents','Escalation apps, agent memory, APIs, prompt engineering and performance evaluations.'],
+        ['Orchestrate robots, agents and humans with Maestro','Agentic Orchestration fundamentals, BPMN concepts and process diagrams.'],
+        ['Monitor and optimize UiPath Maestro','Operate, monitor and optimize AI-driven automation solutions.']
+      ],
+      audience:[['Developers','RPA developer skills are recommended, with 1–3 years of software development and/or RPA experience.'],['Associate graduates','Anyone who has completed the Associate course or certification and want to build coded agents.']],
+      prereq:{
+        oneOf:true,
+        mandatory:[{t:'UiPath Agentic Automation ILT – Introduction (~4 hrs)', url:LINKS.aaIntro},{t:'Agentic Automation Associate ILT', href:'#aa-associate'},{t:'Agentic Automation Associate certification'}],
+        skills:['RPA developer skills recommended','Software development and/or RPA technologies experience (1–3 years)','Experience with RPA tools and broad knowledge of UiPath Platform capabilities strongly recommended'],
+        setup:['For the coded agents hands-on: Python 3.11 or higher','Node.js 20 or later','Package manager: uv or pip',{t:'Setup reference: UiPath Python SDK, getting started', url:LINKS.pySdk},'Fully available for 8 hours on the day, with active participation'],
+        note:'Certificates of completion are granted only to participants who complete the workshop assignments in full.'
+      },
+      register:ILT_REG
+    },
+    {
+      id:'du-ixp', type:'ilt', title:'Document Understanding + IXP',
+      tagline:'Handle every kind of document, from structured forms to complex unstructured files, and run it in production.',
+      facts:{Duration:'1-day workshop', Delivery:'Remote, instructor-led', Audience:'Developers only'},
+      card:['1 day','Remote · live','Developers'],
+      overview:['A one-day instructor-led class for RPA developers. It gives in-depth knowledge of IXP concepts, including Document Understanding, with practical exercises throughout.'],
+      agenda:[{h:'Workshop (1 day)', items:['Document Understanding for semi-structured documents','Modern Projects: out-of-the-box models and custom models','Generative Extraction for unstructured documents','Prompting best practices','Document Understanding Process Template / Framework']}],
+      outcomes:[
+        ['Know your tools','Explain UiPath IXP and pick the right capability for the job.'],
+        ['Handle structured and semi-structured documents','Build taxonomies, classifiers and extractors in Document Understanding.'],
+        ['Handle complex, unstructured documents','Build, evaluate and publish Generative Extraction projects.'],
+        ['Automate it','Consume trained models in Studio workflows using the DU Process Template.'],
+        ['Run it in production','Monitor performance and apply human-in-the-loop validation.']
+      ],
+      audience:[['RPA developers','Developer skills are a must; this course is not for business analysts.'],['Developers with ML interest','Experience with Machine Learning is recommended but not required.']],
+      prereq:{
+        mandatory:[{t:'UiPath Intelligent Extraction Processing (IXP training course)', url:LINKS.ixp}],
+        skills:['Developer skills are a must (no business analysts)','Software development and/or RPA technologies experience (1–3 years)','Machine Learning experience recommended, but not a must','Object-oriented programming knowledge preferred (C#, C++, VB.NET, Java, Python)'],
+        setup:['A computer with Windows 10 or Windows 11 is strongly recommended','UiPath Studio installed on your PC','Fully available for the entire day, with active participation']
+      },
+      register:ILT_REG
+    },
+    {
+      id:'test-cloud', type:'ilt', title:'Test Cloud',
+      tagline:'Use UiPath Test Cloud at its full capabilities, from requirements to agentic testing, and prepare for the certification.',
+      facts:{Duration:'1-day workshop', Delivery:'Remote, instructor-led', Prepares:'UiPath Certified Professional Software Testing Engineer'},
+      card:['1 day','Remote · live','Test engineers'],
+      overview:[
+        'A one-day remote, instructor-led class for developers with testing experience, test automation engineers, test automation architects and test managers. It covers in-depth software testing concepts with hands-on exercises.',
+        'The course prepares learners to use UiPath Test Cloud at its full capabilities and for the UiPath Certified Professional Software Testing Engineer Professional certification exam.'
+      ],
+      agenda:[{h:'Workshop (1 day)', items:['Getting started with Test Manager','Agentic Testing: from requirement to test cases','Getting started in Studio','Object Repository','Test Automation Project','Connect your project to Test Manager and import the Object Repository','From manual test case to test automation','Data-driven testing and test data management','Orchestrator','Publishing test cases','Execute test cases in Test Manager','Building your own AI agents',{t:'Course completion exercises: build and submit', hands:'Hands-on'}]}],
+      outcomes:[
+        ['Testing concepts in practice','Understand software testing concepts and how Test Cloud puts them into practice.'],
+        ['Test Manager','Get familiar with Test Manager capabilities and features.'],
+        ['Testing artifacts','Work with requirements, test cases, test sets and test executions.'],
+        ['ALM integrations','Native integrations and Test Manager Connect.'],
+        ['Automated test cases','Write automated test cases in both low-code and coded fashion.'],
+        ['Data-driven testing','Apply data-driven concepts in test automation; create and manage test data.'],
+        ['Agentic Testing','Build agents with Agent Builder and use Autopilot for Developers and Testers.'],
+        ['Best practices','Apply best practices in test automation development.']
+      ],
+      audience:[['Developers with testing experience','Software development and/or QA experience (1–3 years).'],['Test automation engineers & architects','Building and designing automated test suites.'],['Test managers','Owning test planning, execution and reporting.']],
+      prereq:{
+        mandatory:[{t:'UiPath Test Manager Overview', url:LINKS.tmOverview},{t:'Desktop Test Automation using UiPath Studio', url:LINKS.desktopTest}],
+        skills:['Developer skills are a must (no business analysts)','Software development and/or QA experience (1–3 years)','Testing experience recommended, but not a must'],
+        setup:['A second monitor is highly recommended: watch the instructor on one, do the exercises on the other','Fully available for the entire day, with active participation']
+      },
+      register:ILT_REG
+    },
+    {
+      id:'coding-agents', type:'workshop', title:'Coding Agents',
+      tagline:'From a prompt to a live solution: Agent, App, Maestro and RPA.',
+      facts:{Duration:'Full day · ~7 hours', Delivery:'Live instructor-led or on demand', Format:'Hands-on build', Tooling:'Your coding agent + uip CLI + UiPath skills'},
+      card:['Full day · ~7 h','Live or on demand','Developers · Architects'],
+      overview:['A full-day, hands-on workshop where you pair with your coding agent to build and ship a real AI loan-underwriting solution on UiPath: from coded agent to app, Maestro Flow and RPA, all deployed and running by the end of the day.'],
+      flow:[['Input','A plain-English prompt'],['Your coding agent','uip CLI + UiPath skills'],['Output','Agent, App, Flow + RPA']],
+      agenda:[{h:'What we’ll cover', items:['Set up your coding agent, uip CLI and skills','Build a Python coded agent','Build a React Coded App','Orchestrate with Maestro Flow and RPA','Deploy and run it end-to-end']}],
+      audience:[['RPA developers','Build faster by directing an agent.'],['Solution architects','Design end-to-end agentic solutions.'],['Consultants','Ship builds in days.']],
+      prereq:{
+        mandatory:[],
+        skills:['UiPath Studio basics'],
+        setup:['Your own coding agent with the uip CLI + UiPath skills','A laptop with admin rights']
+      },
+      register:WS_REG
+    },
+    {
+      id:'case-mgmt', type:'selfpaced', title:'Case Management & Coding Agents', level:'Advanced',
+      tagline:'From a PDD to a fully generated Maestro Case, end to end.',
+      facts:{Start:'Anytime · self-paced, on demand', 'Coding agent run time':'10–12 hours', Structure:'6 blocks, one prompt each; gates prove each block', Level:'Advanced'},
+      card:['10–12 h agent run time','Self-paced · on demand','Advanced'],
+      overview:['An advanced build where your coding agent turns a PDD into a full property insurance claims solution: a Maestro Case, seven agents, IXP, Data Fabric and Coded Apps. Then it runs claims full of planted problems.','This is experiential learning: six blocks, one prompt each, with gates that prove each block before you move on.'],
+      flow:[['Input','PDD.md + prompts'],['Coding agent','uip CLI + UiPath skills'],['Output','Case Plan + Apps']],
+      agenda:[{h:'What we’ll cover', items:['Read the PDD, design and plan','Extract claims with IXP and Data Fabric','Build seven agents and the Maestro Case','Hunt the planted problems','Review, portfolio app and handover']}],
+      audience:[['Solution architects','Design an end-to-end agentic case.'],['Advanced developers','Push coding agents to the limit.'],['Delivery teams','Plan, build, verify, hand over.']],
+      prereq:{
+        mandatory:[],
+        skills:['Advanced level: comfortable directing a coding agent through a multi-block build'],
+        setup:['A laptop you have admin rights on','Node.js LTS and npm','Python 3','git','A coding agent installed and signed in, with the uip CLI + UiPath skills']
+      },
+      register:{url:LINKS.portal, title:'Request access', label:'Go to the Partner Portal', text:'This build is self-paced and can start anytime. Request access through the UiPath Partner Portal with your company email and the team will send you the materials.', steps:['Request access through the UiPath Partner Portal with your company email.','Set up your coding agent with the uip CLI and UiPath skills.','Start anytime and work through the six blocks at your own pace.']}
+    },
+    {
+      id:'cartographer', type:'workshop', title:'Cartographer hands-on enablement',
+      tagline:'From raw process knowledge to a published PDD, and on to production.',
+      facts:{Duration:'Half day', Delivery:'Instructor-led', Format:'Hands-on', Experience:'None needed'},
+      card:['Half day','Instructor-led','Business analysts · Architects'],
+      overview:[
+        'In this half-day, hands-on workshop, you use Cartographer to take a process from raw knowledge to a reviewed Process Definition Document (PDD). Cartographer asks only about real gaps, recommends an answer and leaves the decision to you. Nothing is staged in between: every artifact you produce builds on the one before it.',
+        'The exercises are built on realistic customer scenarios. In the example below, Cobalt Ridge Automation, an industrial-equipment maker, has work scattered across seven systems and email. Your brief: cut resolution time and P1 downtime by FY2027, while people keep authority over coverage, safety, engineering and finance decisions.',
+        'The PDD isn’t the end of the journey. We’ll also discuss how Cartographer fits into the path to production, from build to run and continuous improvement.'
+      ],
+      example:{title:'Warranty resolution at Cobalt Ridge Automation', stats:[['11.4 → 3.5 days','Target mean resolution time'],['96 → 24 hrs','Target P1 line downtime'],['~7,400','Warranty claims a year'],['$23.8M','Annual warranty spend']]},
+      creates:{intro:'We’ll take one process from a blank project to a finished design. You bring the brief and the evidence a team already has, such as flows, interviews, workshop notes and system records. You then steer the agent in plain language while it does the analysis. Along the way, you create:', items:[['Current-state knowledge base','A living wiki of the process, with provenance on every captured fact.'],['AS-IS process map','Today’s process as it really runs, in the notation you choose: BPMN, case map or simple flow.'],['TO-BE design','A future state where each proposed change is tied to a KPI, objective or pain point.'],['Process Definition Document','A reviewed PDD, ready to download and publish to Automation Hub.']]},
+      path:[['Discover','Cartographer',1],['Document','PDD and SDD',1],['Build','Coding agents with UiPath skills',0],['Collaborate','Automation Hub and Studio Web',0],['Run','Orchestrator and Maestro',0],['Improve','Runtime insights feed the map',0]],
+      outcomes:[
+        ['How to steer the design','Direct the agent in plain language to add detail or reassign work, and know when to use Steer.'],
+        ['How to tie changes to business value','Each transformation links to a KPI, objective or pain point, and provenance ties every fact to its evidence.'],
+        ['How compliance guardrails work','Edits are checked against regulatory and company rules before they’re accepted.'],
+        ['Where Cartographer fits on the path to production','The PDD carries what the SDD and the build need, each item traced to its source.']
+      ],
+      audience:[['Business analysts & process owners','Who design processes before they’re built.'],['Solution architects','Shaping the TO-BE design and the path to build.'],['Automation CoE members','Owning the pipeline from discovery to delivery.']],
+      prereq:{
+        mandatory:[],
+        skills:['No experience needed: every prompt is in the step-by-step guide'],
+        setup:[]
+      },
+      register:WS_REG
+    }
+  ],
+  enrollment:[
+    ['Create your Partner Portal account','Start here: create your account on the UiPath Partner Portal with your company email address, not a personal one. You need it to register, and registrations without a matching Partner Portal account are automatically rejected.',1],
+    ['Register for a course','Sign in to the Partner Portal, open the current ILT enrollment, select the course you’re interested in, choose the session that best fits your availability and submit your details to express your interest.'],
+    ['Register for multiple courses','To attend more than one course, go back to the same enrollment on the Partner Portal and submit a separate registration for each course and session.'],
+    ['Enrollment is not a confirmation','Submitting a registration does not guarantee a seat; each session has limited capacity.',1],
+    ['Complete the prerequisites','Review the mandatory prerequisites for your course and complete them at least two weeks before the class start date.',1],
+    ['Provide proof if requested','If our system can’t verify your prerequisites, you’ll get an email asking for your completion diploma or certificate. Participants who haven’t completed them at least two weeks before the class may not be eligible for final confirmation.'],
+    ['Selection process','The UiPath ILT team finalizes attendance based on prerequisite completion, registration order, participant eligibility and available seats.'],
+    ['Watch for your meeting invitation','If your registration is confirmed, you’ll receive an ILT meeting invitation about 1–2 weeks before the session.'],
+    ['Confirm your attendance','Accept the invitation to secure your seat. If you can no longer attend, decline promptly so your seat can go to someone else.']
+  ]
+};
+
+/* =====================================================================
+   RENDERING (no edits needed below for content changes)
+   ===================================================================== */
+const $ = (s, r=document) => r.querySelector(s);
+const $$ = (s, r=document) => Array.from(r.querySelectorAll(s));
+const esc = s => String(s).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const O = D.offerings;
+const CUSTOMER = {title:'Connect with your account team', text:'Customers register through their UiPath account team. Reach out to your account team and let them know which course or workshop you’d like to attend.'};
+const customerCol = () => `<div class="regcol cust"><p class="who">Customers</p><h3>${esc(CUSTOMER.title)}</h3><p class="t">${esc(CUSTOMER.text)}</p></div>`;
+const ext = (url, txt) => `<a href="${esc(url)}" target="_blank" rel="noopener">${esc(txt)}</a>`;
+const pxTL = '<svg class="pix tl" aria-hidden="true" width="150" height="150" viewBox="0 0 150 150"><rect x="0" y="0" width="30" height="30" fill="#fff" fill-opacity=".16"/><rect x="0" y="30" width="30" height="60" fill="#fff" fill-opacity=".16"/><rect x="60" y="0" width="30" height="30" fill="#fff" fill-opacity=".16"/><rect x="30" y="30" width="30" height="30" fill="#fff" fill-opacity=".08"/><rect x="90" y="60" width="30" height="30" fill="#fff" fill-opacity=".16"/><rect x="60" y="90" width="30" height="30" fill="#fff" fill-opacity=".08"/></svg>';
+  const pxBR = '<svg class="pix br" aria-hidden="true" width="190" height="150" viewBox="0 0 190 150"><rect x="160" y="120" width="30" height="30" fill="#fff" fill-opacity=".16"/><rect x="130" y="90" width="60" height="30" fill="#fff" fill-opacity=".16"/><rect x="100" y="120" width="30" height="30" fill="#fff" fill-opacity=".16"/><rect x="160" y="60" width="30" height="30" fill="#fff" fill-opacity=".08"/><rect x="70" y="90" width="30" height="30" fill="#fff" fill-opacity=".08"/><rect x="130" y="30" width="30" height="30" fill="#fff" fill-opacity=".16"/></svg>';
+
+const VIEWS = [
+  {id:'home', label:'Overview'},
+  ...O.map(o => ({id:o.id, label:o.title, o})),
+  {id:'prereqs', label:'Prerequisites at a glance'},
+  {id:'register', label:'How to register'}
+];
+
+let catType = 'all', catQuery = '';
+
+function catalogCard(o){
+  const t = TYPES[o.type];
+  const hay = [o.title, o.tagline, t.label, ...(o.card||[]), ...(o.audience||[]).map(a => a[0])].join(' ').toLowerCase();
+  return `<a class="card pcard t-${o.type}" href="#${o.id}" data-type="${o.type}" data-hay="${esc(hay)}">
+    <span class="pn">${esc(t.label)}</span>
+    <h3>${esc(o.title)}</h3>
+    <p>${esc(o.tagline)}</p>
+    <div class="facts">${o.card.map(c => `<span>${esc(c)}</span>`).join('')}</div>
+    <span class="gol">View details, prerequisites and registration →</span>
+  </a>`;
+}
+
+function renderHome(){
+  const n = k => O.filter(o => o.type === k).length;
+  const chip = (k, l, c) => `<button class="chip" type="button" data-cat="${k}" aria-pressed="${k === 'all'}">${l}<span class="c">${c}</span></button>`;
+  return `<div class="wrap">
+    <div class="hero">
+      ${pxTL}${pxBR}
+      <div class="hero-top"><img class="ul" alt="UiPath" src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAwIiBoZWlnaHQ9IjExNiIgdmlld0JveD0iMCAwIDQwMCAxMTYiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxwYXRoIGQ9Ik02Mi42NDM5IDMzLjE0MjhINjAuODg1QzU2LjI5MTggMzMuMTQyOCA1My40Mzg3IDM1LjkzNzYgNTMuNDM4NyA0MC40MzU0Vjc2LjYxNzdDNTMuNDM4NyA5My43NzIyIDQ4LjEwOTggMTAwLjc2OSAzNS4wNDUxIDEwMC43NjlDMjEuOTgwNCAxMDAuNzY5IDE2LjY1MTQgOTMuNzQwNCAxNi42NTE0IDc2LjUwOTZWNDAuNDM1NEMxNi42NTE0IDM1LjkzNzcgMTMuNzk4MiAzMy4xNDI4IDkuMjA1NzUgMzMuMTQyOEg3LjQ0NTkyQzIuODUzMjYgMzMuMTQyOCAwIDM1LjkzNzcgMCA0MC40MzU0Vjc2LjYxNzdDMCAxMDIuNzUgMTEuNzkxMiAxMTYgMzUuMDQ1MSAxMTZDNTguMjk5MSAxMTYgNzAuMDg5NyAxMDIuNzUgNzAuMDg5NyA3Ni42MTc3VjQwLjQzNTRDNzAuMDg5NyAzNS45Mzc3IDY3LjIzNjQgMzMuMTQyOCA2Mi42NDM5IDMzLjE0MjhaIiBmaWxsPSJ3aGl0ZSIvPgo8cGF0aCBkPSJNOTEuMTMyNiA1NS4wOTg5SDg5LjY3NTFDODQuOTY4NSA1NS4wOTg5IDgyLjA0NTEgNTguMDAyMSA4Mi4wNDUxIDYyLjY3NDRWMTA4LjQyNUM4Mi4wNDUxIDExMy4wOTcgODQuOTY4NSAxMTYgODkuNjc1MSAxMTZIOTEuMTMyNkM5NS44Mzg2IDExNiA5OC43NjIgMTEzLjA5NyA5OC43NjIgMTA4LjQyNVY2Mi42NzQ0Qzk4Ljc2MiA1OC4wMDIxIDk1LjgzODYgNTUuMDk4OSA5MS4xMzI2IDU1LjA5ODlaIiBmaWxsPSJ3aGl0ZSIvPgo8cGF0aCBkPSJNMTExLjMyMiAyNi43Nzc4QzEwMC42ODQgMjUuMDk2NyA5Mi4yOTAyIDE2LjgzNzYgOTAuNTgxOCA2LjM3MTQzQzkwLjU0OTYgNi4xNzM4OCA5MC4yODk0IDYuMTczODggOTAuMjU3MiA2LjM3MTQzQzg4LjU0ODggMTYuODM3NiA4MC4xNTQ4IDI1LjA5NjcgNjkuNTE3NSAyNi43Nzc4QzY5LjMxNjcgMjYuODA5NCA2OS4zMTY3IDI3LjA2NTYgNjkuNTE3NSAyNy4wOTczQzgwLjE1NDggMjguNzc4MSA4OC41NDg4IDM3LjAzNzUgOTAuMjU3MiA0Ny41MDM3QzkwLjI4OTQgNDcuNzAxMiA5MC41NDk2IDQ3LjcwMTIgOTAuNTgxOCA0Ny41MDM3QzkyLjI5MDIgMzcuMDM3NSAxMDAuNjg0IDI4Ljc3ODEgMTExLjMyMiAyNy4wOTczQzExMS41MjIgMjcuMDY1NiAxMTEuNTIyIDI2LjgwOTUgMTExLjMyMiAyNi43Nzc4Wk0xMDAuODcgMjcuMDE3NEM5NS41NTE4IDI3Ljg1NzggOTEuMzU0OCAzMS45ODc1IDkwLjUwMDcgMzcuMjIwNkM5MC40ODQ1IDM3LjMxOTQgOTAuMzU0NCAzNy4zMTk0IDkwLjMzODMgMzcuMjIwNkM4OS40ODQxIDMxLjk4NzUgODUuMjg3MSAyNy44NTc4IDc5Ljk2ODUgMjcuMDE3NEM3OS44NjggMjcuMDAxNiA3OS44NjggMjYuODczNSA3OS45Njg1IDI2Ljg1NzdDODUuMjg3MSAyNi4wMTcxIDg5LjQ4NDEgMjEuODg3NiA5MC4zMzgzIDE2LjY1NDVDOTAuMzU0NCAxNi41NTU3IDkwLjQ4NDUgMTYuNTU1NyA5MC41MDA3IDE2LjY1NDVDOTEuMzU0OCAyMS44ODc2IDk1LjU1MTggMjYuMDE3MSAxMDAuODcgMjYuODU3N0MxMDAuOTcxIDI2Ljg3MzUgMTAwLjk3MSAyNy4wMDE2IDEwMC44NyAyNy4wMTc0WiIgZmlsbD0id2hpdGUiLz4KPHBhdGggZD0iTTExNy42OTQgMTAuNDM3MUMxMTIuMzc2IDExLjI3NzQgMTA4LjE3OSAxNS40MDcxIDEwNy4zMjUgMjAuNjQwMkMxMDcuMzA4IDIwLjczOSAxMDcuMTc4IDIwLjczOSAxMDcuMTYyIDIwLjY0MDJDMTA2LjMwOCAxNS40MDcxIDEwMi4xMTEgMTEuMjc3NCA5Ni43OTIzIDEwLjQzNzFDOTYuNjkxOSAxMC40MjEyIDk2LjY5MTkgMTAuMjkzMSA5Ni43OTIzIDEwLjI3NzNDMTAyLjExMSA5LjQzNjc0IDEwNi4zMDggNS4zMDcyIDEwNy4xNjIgMC4wNzQwODk4QzEwNy4xNzggLTAuMDI0Njk2NiAxMDcuMzA4IC0wLjAyNDY5NjYgMTA3LjMyNSAwLjA3NDA4OThDMTA4LjE3OSA1LjMwNzIgMTEyLjM3NiA5LjQzNjcyIDExNy42OTQgMTAuMjc3M0MxMTcuNzk1IDEwLjI5MzEgMTE3Ljc5NSAxMC40MjEyIDExNy42OTQgMTAuNDM3MVoiIGZpbGw9IndoaXRlIi8+CjxwYXRoIGQ9Ik0xMzUuMzEyIDMzLjE0MjhIMTE5LjA4N0MxMTQuNDQ1IDMzLjE0MjggMTExLjU2MSAzNS45Njc0IDExMS41NjEgNDAuNTEzM1YxMDguNjNDMTExLjU2MSAxMTMuMTc1IDExNC40NDUgMTE2IDExOS4wODcgMTE2SDEyMC44NjVDMTI1LjUwNyAxMTYgMTI4LjM5MSAxMTMuMTc1IDEyOC4zOTEgMTA4LjYzVjkyLjUwNTdIMTM1LjQyM0MxNjMuNTggOTIuNTA1NyAxNzUuMDY2IDgzLjkwNjYgMTc1LjA2NiA2Mi44MjQzQzE3NS4wNjYgNDEuNzQxOSAxNjMuNTQ4IDMzLjE0MjggMTM1LjMxMiAzMy4xNDI4Wk0xNTguMDE0IDYyLjYwNjdDMTU4LjAxNCA3My40NTI1IDE1Mi43NjIgNzcuMTEyMyAxMzcuMjAxIDc3LjExMjNIMTI4LjM5MVY0OC4yMDk1SDEzNy4yMDFDMTUyLjc2MiA0OC4yMDk1IDE1OC4wMTQgNTEuODQyIDE1OC4wMTQgNjIuNjA2N1oiIGZpbGw9IndoaXRlIi8+CjxwYXRoIGQ9Ik0yMzcuNTY0IDQ4LjQ3MzlIMjM2LjIzQzIzMS41ODkgNDguNDczOSAyMjguNzA1IDUxLjI5ODYgMjI4LjcwNSA1NS44NDQ0VjU1Ljg1MzhDMjIzLjkzOCA1MC40NDc0IDIxNi41NTQgNDcuMjc3MiAyMDguMTE0IDQ3LjI3NzJDMTk5LjUxNiA0Ny4yNzcyIDE5MS43NCA1MC4zNzExIDE4Ni4yMiA1NS45OTAzQzE4MC4yMDcgNjIuMTA5NCAxNzcuMDI5IDcwLjk0MTIgMTc3LjAyOSA4MS41Mjk5QzE3Ny4wMjkgOTIuMTY0NyAxODAuMjI2IDEwMS4wNDcgMTg2LjI3NCAxMDcuMjE3QzE5MS44MjUgMTEyLjg4MSAxOTkuNjIxIDExNiAyMDguMjI1IDExNkMyMTYuNTA1IDExNiAyMjMuOTQ0IDExMi43OSAyMjguNzExIDEwNy40NjJDMjI4LjcxMSAxMDcuNDY4IDIyOC43MTEgMTA4Ljk5OCAyMjguNzEyIDEwOS4wMDRDMjI4Ljg2NiAxMTMuMzMgMjMxLjcxNyAxMTYgMjM2LjIzIDExNkgyMzcuNTY0QzI0Mi4yMDYgMTE2IDI0NS4wODkgMTEzLjE3NiAyNDUuMDg5IDEwOC42MzFWNTUuODQ0NEMyNDUuMDg5IDUxLjI5ODYgMjQyLjIwNiA0OC40NzM5IDIzNy41NjQgNDguNDczOVpNMjI5LjAzOCA4MS41Mjk5QzIyOS4wMzggOTMuOTY3OCAyMjIuMjU2IDEwMS42OTUgMjExLjMzNyAxMDEuNjk1QzIwMC4yODEgMTAxLjY5NSAxOTMuNDE0IDkzLjk2NzggMTkzLjQxNCA4MS41Mjk5QzE5My40MTQgNjkuMTU3OSAyMDAuMTk2IDYxLjQ3MyAyMTEuMTE1IDYxLjQ3M0MyMjIuMDAzIDYxLjQ3MyAyMjkuMDM4IDY5LjM0NjIgMjI5LjAzOCA4MS41Mjk5WiIgZmlsbD0id2hpdGUiLz4KPHBhdGggZD0iTTMzNC40NDggNDcuMzQyNUMzMjUuNzMzIDQ3LjM0MjUgMzE5LjUxNiA1MC43NDE3IDMxNS42MjQgNTUuMDI1NlY0MC41MTc5QzMxNS42MjQgMzUuOTY5MyAzMTIuNzM4IDMzLjE0MjggMzA4LjA5NCAzMy4xNDI4SDMwNi43NTlDMzAyLjExNSAzMy4xNDI4IDI5OS4yMjkgMzUuOTY5MyAyOTkuMjI5IDQwLjUxNzlWMTA4LjYyNUMyOTkuMjI5IDExMy4xNzQgMzAyLjExNSAxMTYgMzA2Ljc1OSAxMTZIMzA4LjA5NEMzMTIuNzM4IDExNiAzMTUuNjI0IDExMy4xNzQgMzE1LjYyNCAxMDguNjI1VjgxLjI4OTdDMzE1LjYyNCA2My43ODk0IDMyNC4xNDYgNjEuNzY1NyAzMzAuNTU2IDYxLjc2NTdDMzQxLjMyIDYxLjc2NTcgMzQ1LjcxMSA2Ny4wMTI1IDM0NS43MTEgNzkuODc0NlYxMDguNjI1QzM0NS43MTEgMTEzLjE3NCAzNDguNTk2IDExNiAzNTMuMjQxIDExNkgzNTQuNTc2QzM1OS4yMiAxMTYgMzYyLjEwNSAxMTMuMTc0IDM2Mi4xMDUgMTA4LjYyNVY3OC44OTM4QzM2Mi4xMDUgNTcuNjYyNyAzNTMuMDU5IDQ3LjM0MjUgMzM0LjQ0OCA0Ny4zNDI1WiIgZmlsbD0id2hpdGUiLz4KPHBhdGggZD0iTTI5NC41MTUgMTA3LjY2NEMyOTQuMjg0IDEwNS40NzIgMjkyLjk0NSAxMDIuMzQgMjg2LjU2NSAxMDIuMzRDMjc5LjAyMSAxMDIuMzQgMjc1LjQzMSAxMDAuMDM3IDI3NS40MzEgODYuOTUyOVY2MS43NjU4SDI4Ni42NzVDMjkxLjMxMyA2MS43NjU4IDI5NC4xOTQgNTkuMTkgMjk0LjE5NCA1NS4wNDQ2QzI5NC4xOTQgNTAuOTY2IDI5MS4zMTMgNDguNDMxNyAyODYuNjc1IDQ4LjQzMTdIMjc1LjQ0NFY0MC41MTc5QzI3NS40NDQgMzUuOTY5MyAyNzIuNTQxIDMzLjE0MjggMjY3Ljg2OSAzMy4xNDI4SDI2Ni41MjZDMjYxLjg1NCAzMy4xNDI4IDI1OC45NTEgMzUuOTY5MyAyNTguOTUxIDQwLjUxNzlWNDguNDMxN0gyNTYuMzY2QzI1Mi4yNzYgNDguNDMxNyAyNDkuNzM2IDUwLjk2NiAyNDkuNzM2IDU1LjA0NDZDMjQ5LjczNiA1OS4xOSAyNTIuNjE3IDYxLjc2NTggMjU3LjI1NCA2MS43NjU4SDI1OC45NTFWODguMzY4OUMyNTguOTUxIDEwNy43MzcgMjY2LjY0NSAxMTYgMjg0LjY3NyAxMTZDMjg0LjcwNyAxMTYgMjg0LjczNiAxMTUuOTk5IDI4NC43NjUgMTE1Ljk5OEMyODUuODEzIDExNS45OTcgMjg2LjkzNyAxMTUuOTgxIDI4OC4wODEgMTE1Ljg4MUMyOTAuMzU0IDExNS42NyAyOTIuMDczIDExNC44ODUgMjkzLjE5MSAxMTMuNTQ2QzI5NC4zMDUgMTEyLjIxMyAyOTQuNzUgMTA5Ljg3IDI5NC41MTUgMTA3LjY2NFoiIGZpbGw9IndoaXRlIi8+CjxwYXRoIGQ9Ik0zNjcuMzMxIDQ3LjYzMjhWMzYuNDA4MkgzNjQuMUMzNjIuODIzIDM2LjQwODIgMzYyLjEwNSAzNS44MzY3IDM2Mi4xMDUgMzQuNzc1NUMzNjIuMTA1IDMzLjcxNDMgMzYyLjgyMyAzMy4xNDI4IDM2NC4xIDMzLjE0MjhIMzczLjk1MkMzNzUuMjI4IDMzLjE0MjggMzc1Ljk0NiAzMy43MTQzIDM3NS45NDYgMzQuNzc1NUMzNzUuOTQ2IDM1LjgzNjcgMzc1LjIyOCAzNi40MDgyIDM3My45NTIgMzYuNDA4MkgzNzAuODAxVjQ3LjYzMjhDMzcwLjgwMSA0OC45MzkgMzcwLjIwMyA0OS42NzMzIDM2OS4wODYgNDkuNjczM0MzNjcuOTY5IDQ5LjY3MzMgMzY3LjMzMSA0OC45MzkgMzY3LjMzMSA0Ny42MzI4Wk0zNzcuODIyIDQ5LjcxMzlDMzc2Ljc0NSA0OS43MTM5IDM3Ni4xNzQgNDguODkzNyAzNzYuNDY1IDQ3LjQ2OTVMMzc5LjAxOCAzNC45Mzg4QzM3OS4yNTggMzMuNzU1MyAzNzkuOTc2IDMzLjE0MjggMzgxLjE3MiAzMy4xNDI4SDM4MS43NzFDMzgyLjg4NyAzMy4xNDI4IDM4My42MzcgMzMuNjc3NSAzODQuMDQ0IDM0LjczNDFMMzg4LjE5MiA0NS41MDk2TDM5Mi4zOCAzNC43MzQxQzM5Mi43OTUgMzMuNjY1MiAzOTMuNTc3IDMzLjE0MjggMzk0LjY5NCAzMy4xNDI4SDM5NS4yNTJDMzk2LjQ0OSAzMy4xNDI4IDM5Ny4xNjcgMzMuNzU1MyAzOTcuNDA2IDM0LjkzODhMMzk5LjkxOSA0Ny40Njk1QzQwMC4yMDYgNDguODk3OSAzOTkuNzIgNDkuNzE0MyAzOTguNjQzIDQ5LjcxNDNDMzk3LjQ4NiA0OS43MTQzIDM5Ni43NzIgNDkuMTAyMiAzOTYuNTI5IDQ3LjkxODNMMzk0LjQxNSAzNy42NzM2TDM5MC40MjYgNDguMTIyNkMzOTAuMDA3IDQ5LjIxNjQgMzg5LjMwOSA0OS43MTM5IDM4OC4yMzIgNDkuNzEzOUMzODcuMTE1IDQ5LjcxMzkgMzg2LjQxNyA0OS4yMTY0IDM4NS45OTggNDguMTIyNkwzODIuMDEgMzcuNjczNkwzNzkuOTM1IDQ3LjkxODNDMzc5LjY5NiA0OS4xMDIyIDM3OC45NzggNDkuNzEzOSAzNzcuODIyIDQ5LjcxMzlaIiBmaWxsPSJ3aGl0ZSIvPgo8L3N2Zz4K"><span class="team">Technical Partner Success</span></div>
+      <div class="hero-main"><div class="k">UiPath Partner Success</div><h1>Trainings &amp; workshops for UiPath partners and customers<em>.</em></h1>
+        <p class="sub">Instructor-led courses and hands-on workshops that help your teams build high-quality automations and deliver successful, large-scale implementations.</p></div>
+      <div class="hero-meta">
+        <div><div class="n">${n('ilt')}</div><div class="r">Instructor-led courses</div></div>
+        <div><div class="n">${n('workshop') + n('selfpaced')}</div><div class="r">Hands-on workshops &amp; builds</div></div>
+        <div><div class="n">Hands-on</div><div class="r">Practical exercises in every session</div></div>
+        <div><div class="n">Remote</div><div class="r">AMER · EMEA · India time zones</div></div>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>Browse the catalog</h2>
+      <p class="sub">Pick a course or workshop to see what it covers, who it’s for, what you need to complete first and how to register.</p>
+      <div class="chips" role="group" aria-label="Filter by type">
+        ${chip('all','All',O.length)}${chip('ilt','Instructor-led',n('ilt'))}${chip('workshop','Workshops',n('workshop'))}${chip('selfpaced','Self-paced',n('selfpaced'))}
+        <input class="search" id="catSearch" type="search" placeholder="Search, e.g. agents, testing, IXP" aria-label="Search trainings">
+      </div>
+      <div class="grid g3" id="catalog">${O.map(catalogCard).join('')}</div>
+      <p class="note empty" id="catEmpty">No trainings match that search. Try another word or clear the filter.</p>
+    </div>
+
+    <div class="section">
+      <h2>Where to start</h2>
+      <p class="sub">The agentic automation courses build on each other. The other offerings stand on their own.</p>
+      <div class="grid g2">
+        <div class="card"><h3>Agentic automation path</h3><p class="muted" style="font-size:15px;margin-bottom:14px">Complete the self-learning introduction, then move up through the two instructor-led levels.</p>
+          <div class="path-mini"><a href="${LINKS.aaIntro}" target="_blank" rel="noopener">ILT – Introduction (Academy)</a><span class="ar">→</span><a href="#aa-associate">Associate</a><span class="ar">→</span><a href="#aa-professional">Professional</a></div></div>
+        <div class="card"><h3>Build with coding agents</h3><p class="muted" style="font-size:15px;margin-bottom:14px">Start with the full-day workshop, then take on the advanced self-paced case build.</p>
+          <div class="path-mini"><a href="#coding-agents">Coding Agents workshop</a><span class="ar">→</span><a href="#case-mgmt">Case Management &amp; Coding Agents</a></div></div>
+        <div class="card"><h3>Design before you build</h3><p class="muted" style="font-size:15px;margin-bottom:14px">For analysts and architects: go from raw process knowledge to a reviewed PDD.</p>
+          <div class="path-mini"><a href="#cartographer">Cartographer hands-on</a></div></div>
+        <div class="card"><h3>Specialist tracks</h3><p class="muted" style="font-size:15px;margin-bottom:14px">One-day deep dives on intelligent document processing and testing.</p>
+          <div class="path-mini"><a href="#du-ixp">Document Understanding + IXP</a><a href="#test-cloud">Test Cloud</a></div></div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="regbox"><div><h3>Ready to sign up?</h3><p>Partners register through the UiPath Partner Portal. Customers connect with their UiPath account team. Either way, finish the prerequisites at least 2 weeks before the class.</p></div>
+        <div class="row"><a class="btn ghost" href="#register">How registration works</a><a class="btn cta" href="${LINKS.portal}" target="_blank" rel="noopener">Go to the Partner Portal ↗</a></div></div>
+    </div>
+  </div>`;
+}
+
+function itemHTML(i){
+  if (typeof i === 'string') return `<li><span>${esc(i)}</span></li>`;
+  return `<li class="hands"><span>${esc(i.t)}<span class="hl">${esc(i.hands)}</span></span></li>`;
+}
+function reqItem(m){
+  if (m.url) return `<li><a href="${esc(m.url)}" target="_blank" rel="noopener">${esc(m.t)}</a></li>`;
+  if (m.href) return `<li><a href="${esc(m.href)}">${esc(m.t)}</a></li>`;
+  return `<li><span class="nolink">${esc(m.t)}</span></li>`;
+}
+function chkItem(s){
+  if (typeof s === 'string') return `<li><span>${esc(s)}</span></li>`;
+  return `<li><span>${ext(s.url, s.t)}</span></li>`;
+}
+
+function renderOffering(o, idx){
+  const t = TYPES[o.type];
+  const prev = O[idx - 1], next = O[idx + 1];
+  const p = o.prereq;
+  const mand = p.mandatory.length
+    ? `<div class="req"><h3>${p.oneOf ? 'Complete one of these first' : 'Complete before you attend'}</h3>
+        ${o.type === 'ilt' ? '<p class="when">Mandatory · at least 2 weeks before the session</p>' : ''}
+        <ul>${p.mandatory.map((m, i) => (p.oneOf && i ? '<li class="or">or</li>' : '') + reqItem(m)).join('')}</ul></div>`
+    : `<div class="req"><h3>No prerequisite course</h3><p class="muted" style="font-size:15px">There’s no course to complete first. Check the experience and setup needed below so you’re ready on the day.</p></div>`;
+  const tagRow = o.level ? `<div class="tags" style="margin-top:4px"><span class="tag lvl">${esc(o.level)}</span></div>` : '';
+
+  return `<div class="wrap">
+    <div class="head"><p class="eyebrow">${esc(t.label)}</p><h1>${esc(o.title)}</h1><p class="lead">${esc(o.tagline)}</p>${tagRow}</div>
+    <div class="marks">${Object.entries(o.facts).map(([k, v]) => `<div class="mk"><div class="k">${esc(k)}</div><div class="v">${esc(v)}</div></div>`).join('')}</div>
+
+    <div class="section"><h2>Overview</h2><div class="prose">${o.overview.map(x => `<p>${esc(x)}</p>`).join('')}</div>
+      ${o.flow ? `<div class="flow" style="margin-top:20px">${o.flow.map((f, i) => (i ? '<div class="ar" aria-hidden="true">›</div>' : '') + `<div class="st ${i === 1 ? 'mid' : ''}"><div class="k">${esc(f[0])}</div><div class="v">${esc(f[1])}</div></div>`).join('')}</div>` : ''}
+    </div>
+
+    ${o.example ? `<div class="section"><p class="eyebrow">Example exercise</p><h2 style="font-size:22px;margin:4px 0 14px">${esc(o.example.title)}</h2>
+      <div class="grid g4">${o.example.stats.map(s => `<div class="card stat"><div class="num">${esc(s[0])}</div><div class="muted" style="font-size:14px">${esc(s[1])}</div></div>`).join('')}</div></div>` : ''}
+
+    ${o.creates ? `<div class="section"><h2>What you’ll do</h2><p class="sub">${esc(o.creates.intro)}</p>
+      <div class="grid g4">${o.creates.items.map(c => `<div class="card" style="box-shadow:inset 0 4px 0 var(--orange)"><h3>${esc(c[0])}</h3><p class="muted" style="font-size:15px">${esc(c[1])}</p></div>`).join('')}</div></div>` : ''}
+
+    ${o.agenda ? `<div class="section"><h2>${o.type === 'ilt' ? 'High-level agenda' : 'What we’ll cover'}</h2>
+      <div class="agenda ${o.agenda.length > 1 ? 'two' : ''}">${o.agenda.map(a => `<div class="card">${o.agenda.length > 1 || o.type === 'ilt' ? `<h3>${esc(a.h)}</h3>` : ''}<ol>${a.items.map(itemHTML).join('')}</ol></div>`).join('')}</div></div>` : ''}
+
+    ${o.path ? `<div class="section"><h2>From process to production</h2><p class="sub">Cartographer is where the journey starts. We’ll discuss how the design flows on to build, run and improve on the UiPath Platform.</p>
+      <div class="path">${o.path.map(s => `<div class="p ${s[2] ? 'on' : ''}"><i></i><div class="k">${esc(s[0])}</div><div class="v">${esc(s[1])}</div></div>`).join('')}</div>
+      <div class="legend"><span><b class="f"></b>Hands-on in the workshop</span><span><b></b>Covered in discussion</span></div></div>` : ''}
+
+    ${o.outcomes ? `<div class="section"><h2>${o.type === 'ilt' ? 'Course outcomes' : 'What you’ll take away'}</h2>
+      <ul class="out grid g2">${o.outcomes.map(x => `<li><b>${esc(x[0])}.</b> <span>${esc(x[1])}</span></li>`).join('')}</ul></div>` : ''}
+
+    <div class="section"><h2>Who should attend</h2>
+      <div class="grid ${o.audience.length > 2 ? 'g3' : 'g2'}">${o.audience.map(a => `<div class="card"><h3>${esc(a[0])}</h3><p class="muted" style="font-size:15px">${esc(a[1])}</p></div>`).join('')}</div></div>
+
+    <div class="section" id="pre-${o.id}"><h2>Prerequisites</h2><p class="sub">What you need to complete, know and have set up before the ${o.type === 'selfpaced' ? 'build' : 'session'}.</p>
+      <div class="grid g3">
+        ${mand}
+        <div class="card"><h3>Experience</h3><ul class="chk">${p.skills.map(chkItem).join('')}</ul></div>
+        <div class="card"><h3>Setup &amp; availability</h3>${p.setup.length ? `<ul class="chk warn">${p.setup.map(chkItem).join('')}</ul>` : '<p class="muted" style="font-size:15px">Nothing to install or set up in advance.</p>'}</div>
+      </div>
+      ${p.note ? `<p class="note" style="margin-top:14px"><b>Certificate.</b> ${esc(p.note)}</p>` : ''}
+    </div>
+
+    <div class="section"><h2>How to register</h2>
+      <div class="grid g2">
+        <div class="regcol"><p class="who">Partners</p><h3>${esc(o.register.title)}</h3><p class="t">${esc(o.register.text)}</p><a class="btn cta" href="${esc(o.register.url)}" target="_blank" rel="noopener">${esc(o.register.label)} ↗</a></div>
+        ${customerCol()}
+      </div>
+      <h3 class="steps-h">Steps for partners</h3>
+      <ol class="steps">${o.register.steps.map(s => `<li><span style="color:var(--ink)">${esc(s)}</span></li>`).join('')}</ol>
+      ${o.type === 'ilt' ? '<p class="note" style="margin-top:14px">Full enrollment rules, including how seats are confirmed, are on <a href="#register">How to register</a>.</p>' : ''}
+    </div>
+
+    <div class="pager">${prev ? `<a href="#${prev.id}">← ${esc(prev.title)}</a>` : '<a href="#home">← Overview</a>'}${next ? `<a href="#${next.id}">${esc(next.title)} →</a>` : '<a href="#prereqs">Prerequisites at a glance →</a>'}</div>
+  </div>`;
+}
+
+function renderPrereqs(){
+  const cell = arr => arr.length ? `<ul>${arr.map(x => typeof x === 'string' ? `<li>${esc(x)}</li>` : `<li>${x.url ? ext(x.url, x.t) : x.href ? `<a href="${x.href}">${esc(x.t)}</a>` : esc(x.t)}</li>`).join('')}</ul>` : '<span class="muted">None</span>';
+  const rows = O.map(o => {
+    const p = o.prereq;
+    const m = p.mandatory.length ? (p.oneOf ? `<span class="muted" style="font-size:13px">One of:</span>` : '') + cell(p.mandatory) : '<span class="muted">No course required</span>';
+    return `<tr><td class="layer"><a href="#${o.id}">${esc(o.title)}</a><small>${esc(TYPES[o.type].label)} · ${esc(o.card[0])}</small></td><td>${m}</td><td>${cell(p.skills)}</td><td>${cell(p.setup)}</td></tr>`;
+  }).join('');
+  return `<div class="wrap">
+    <p class="eyebrow">Plan your place</p><h1>Prerequisites at a glance</h1>
+    <p class="lead">Everything each course and workshop expects before you attend, side by side.</p>
+    <div class="section" style="margin-top:26px"><p class="decq">For instructor-led courses, the mandatory prerequisites must be completed <b>at least 2 weeks before</b> the session. Participants who haven’t completed them may not be confirmed.</p></div>
+    <div class="section" style="margin-top:24px"><div class="table-wrap"><table>
+      <thead><tr><th style="width:22%">Training</th><th style="width:26%">Mandatory before you attend</th><th>Experience</th><th>Setup &amp; availability</th></tr></thead>
+      <tbody>${rows}</tbody></table></div></div>
+    <div class="section"><h2>Self-learning courses on UiPath Academy</h2><p class="sub">The prerequisite courses you can take at your own pace.</p>
+      <div class="grid g2">
+        ${[[LINKS.aaIntro,'UiPath Agentic Automation ILT – Introduction','~4 hrs · for Associate, or Professional (one option)'],[LINKS.ixp,'UiPath Intelligent Extraction Processing','For Document Understanding + IXP'],[LINKS.tmOverview,'UiPath Test Manager Overview','For Test Cloud'],[LINKS.desktopTest,'Desktop Test Automation using UiPath Studio','For Test Cloud']].map(c => `<a class="card pcard" href="${c[0]}" target="_blank" rel="noopener"><span class="pn">Self-learning</span><h3>${esc(c[1])}</h3><p>${esc(c[2])}</p><span class="gol">Open course ↗</span></a>`).join('')}
+      </div></div>
+    <div class="pager"><a href="#${O[O.length - 1].id}">← ${esc(O[O.length - 1].title)}</a><a href="#register">How to register →</a></div>
+  </div>`;
+}
+
+function renderRegister(){
+  return `<div class="wrap">
+    <p class="eyebrow">Plan your place</p><h1>How to register</h1>
+    <p class="lead">Instructor-led courses have limited seats per session. Here’s how enrollment works, from registering to getting your seat confirmed.</p>
+    <div class="section" style="margin-top:26px">
+      <div class="grid g2">
+        <div class="regcol"><p class="who">Partners</p><h3>Enroll through the Partner Portal</h3><p class="t">The current enrollment for every course and session is on the UiPath Partner Portal. Sign in with your company email and submit a separate registration for each course you want to attend.</p><a class="btn cta" href="${LINKS.portal}" target="_blank" rel="noopener">Go to the Partner Portal ↗</a></div>
+        ${customerCol()}
+      </div>
+    </div>
+    <div class="section"><h2>Instructor-led courses: enrollment process for partners</h2><p class="sub">The orange steps are the ones most often missed, and they can lead to a registration being rejected.</p>
+      <ol class="steps">${D.enrollment.map(s => `<li class="${s[2] ? 'key' : ''}"><b>${esc(s[0])}</b><span>${esc(s[1])}</span></li>`).join('')}</ol>
+    </div>
+    <div class="section"><h2>Workshops and self-paced builds</h2><p class="sub">Coding Agents, Case Management &amp; Coding Agents, and Cartographer.</p>
+      <div class="grid g3">${O.filter(o => o.type !== 'ilt').map(o => `<div class="card pcard t-${o.type}" style="cursor:default"><span class="pn">${esc(TYPES[o.type].label)}</span><h3>${esc(o.title)}</h3><p>${esc(o.register.text)}</p><p><b style="color:var(--orange-ink)">Customers:</b> connect with your UiPath account team.</p><div class="row" style="margin-top:auto"><a class="btn cta" href="${esc(o.register.url)}" target="_blank" rel="noopener">${esc(o.register.label)} ↗</a><a class="btn ghost" href="#${o.id}">Details</a></div></div>`).join('')}</div>
+    </div>
+    <div class="section"><div class="card dark"><h3>Need assistance?</h3><p class="muted" style="font-size:15px">For any questions or issues with the ILT Program or the workshops, contact the team at <a href="mailto:${LINKS.email}">${LINKS.email}</a>.</p></div></div>
+    <div class="pager"><a href="#prereqs">← Prerequisites at a glance</a><a href="#home">Back to overview →</a></div>
+  </div>`;
+}
+
+/* ---------- build / route / events (pattern from the reference) ---------- */
+const main = $('#main');
+const panels = {};
+function build(){
+  VIEWS.forEach(v => {
+    const s = document.createElement('section');
+    s.className = 'view' + (v.id === 'home' ? ' nologo' : ''); s.id = 'view-' + v.id; s.setAttribute('aria-label', v.label);
+    main.appendChild(s); panels[v.id] = s;
+  });
+  panels.home.innerHTML = renderHome();
+  O.forEach((o, i) => { panels[o.id].innerHTML = renderOffering(o, i); });
+  panels.prereqs.innerHTML = renderPrereqs();
+  panels.register.innerHTML = renderRegister();
+  const link = id => { const v = VIEWS.find(x => x.id === id); return `<a href="#${v.id}" data-v="${v.id}">${esc(v.label)}</a>`; };
+  const groups = [
+    ['Start', ['home']],
+    ['Instructor-led courses', [O.filter(o => o.type === 'ilt').map(o => o.id)]],
+    ['Workshops', [O.filter(o => o.type !== 'ilt').map(o => o.id)]],
+    ['Plan your place', ['prereqs', 'register']]
+  ];
+  $('#nav').innerHTML = groups.map(g => `<p class="grp">${g[0]}</p>` + g[1].map(x => Array.isArray(x) ? `<div class="subnav">${x.map(link).join('')}</div>` : link(x)).join('')).join('');
+}
+function route(){
+  let id = (location.hash || '').replace('#', '');
+  if (!panels[id]) id = 'home';
+  VIEWS.forEach(v => { panels[v.id].classList.toggle('on', v.id === id); });
+  $$('#nav a').forEach(a => { if (a.dataset.v === id) a.setAttribute('aria-current', 'page'); else a.removeAttribute('aria-current'); });
+  window.scrollTo(0, 0);
+  const v = VIEWS.find(x => x.id === id);
+  document.title = (id === 'home' ? '' : v.label + ' · ') + 'UiPath Trainings & Workshops';
+}
+function filterCatalog(){
+  let shown = 0;
+  $$('#catalog .pcard').forEach(c => {
+    const ok = (catType === 'all' || c.dataset.type === catType) && (!catQuery || c.dataset.hay.includes(catQuery));
+    c.style.display = ok ? '' : 'none'; if (ok) shown++;
+  });
+  $('#catEmpty').classList.toggle('on', shown === 0);
+}
+document.addEventListener('click', e => {
+  const f = e.target.closest('[data-cat]');
+  if (f){ catType = f.dataset.cat; $$('[data-cat]').forEach(b => b.setAttribute('aria-pressed', String(b === f))); filterCatalog(); }
+});
+document.addEventListener('input', e => {
+  if (e.target.id === 'catSearch'){ catQuery = e.target.value.trim().toLowerCase(); filterCatalog(); }
+});
+document.addEventListener('keydown', e => {
+  if (e.target.matches('input,textarea')) return;
+  if (e.key !== 'ArrowRight' && e.key !== 'ArrowLeft') return;
+  const id = (location.hash || '#home').slice(1); const i = Math.max(0, VIEWS.findIndex(v => v.id === id));
+  const n = VIEWS[i + (e.key === 'ArrowRight' ? 1 : -1)]; if (n) location.hash = n.id;
+});
+$('#menuBtn').addEventListener('click', () => { const n = $('#nav'); const o = n.classList.toggle('open'); $('#menuBtn').setAttribute('aria-expanded', String(o)); });
+window.addEventListener('hashchange', () => { $('#nav').classList.remove('open'); $('#menuBtn').setAttribute('aria-expanded', 'false'); route(); });
+build(); route();
+</script>
+</body>
+</html>
