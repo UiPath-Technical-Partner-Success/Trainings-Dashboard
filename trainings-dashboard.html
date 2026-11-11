@@ -471,6 +471,27 @@ const D = {
         setup:[]
       },
       register:WS_REG
+    },
+    {
+      id:'ixp-hands-on', type:'workshop', title:'IXP hands-on workshop', level:'On request',
+      tagline:'IXP best practices for developers, lab by lab.',
+      facts:{Duration:'2 × 2 hours', Delivery:'Remote, instructor-led', Format:'Hands-on · 4 labs', Availability:'On request'},
+      card:['2 × 2 h','Remote · on request','IXP developers'],
+      overview:[
+        'A short, hands-on workshop for developers who already work with IXP. Over two 2-hour sessions you work through four labs on the questions IXP teams ask most: where an instruction belongs, how to extract repeating data, how to handle several documents in one file, and how to build a lean workflow with confidence checks and human validation.',
+        'Every agenda block comes with theory and diagrams. The participant site stays open afterwards, with the labs, sample documents and checklists.'
+      ],
+      agenda:[
+        {h:'Day 1 (2 hours)', items:['Kickoff and using IXP well',{t:'Instructions and taxonomy design', hands:'~35 min'},{t:'Repeating data: several accounts in one document', hands:'~25 min'}]},
+        {h:'Day 2 (2 hours)', items:[{t:'Multi-document files: split first, or one project?', hands:'~30 min'},{t:'Lean workflow, confidence and validation', hands:'~40 min'},'Best-practice and Modern DU → IXP migration checklists']}
+      ],
+      audience:[['IXP developers','Get extraction quality right, faster.'],['RPA developers','Swap the full DU framework for a lean IXP workflow.'],['Solution architects','Choose a design for multi-document files and repeating data.']],
+      prereq:{
+        mandatory:[],
+        skills:['Hands-on IXP experience, or the IXP self-learning course'],
+        setup:['A browser for Day 1','UiPath Studio for Lab 4 (Day 2)']
+      },
+      register:{url:'https://uipath-technical-partner-success.github.io/IXP-HandsOnWorkshop/', title:'Ask your Partner Success contact', label:'Open the workshop site', text:'This workshop isn’t on the regular schedule and runs on request. Ask your Technical Partner Success contact for a session. The participant site is open to everyone.', steps:['Ask your Technical Partner Success contact for a session.','Agree the dates and who attends.','Complete the setup on the workshop site before Day 1.']}
     }
   ],
   enrollment:[
